@@ -90,17 +90,6 @@ PKG_CONFIG_APPEND_LIBS(roboptim-trajectory)
 SET(BOOST_COMPONENTS filesystem system unit_test_framework serialization)
 SEARCH_FOR_BOOST()
 
-# Libtool dynamic loading
-# This project does not use Libtool directly but still uses ltdl for
-# plug-in loading.
-INCLUDE(CheckIncludeFileCXX)
-CHECK_INCLUDE_FILE_CXX(ltdl.h LTDL_H_FOUND)
-IF (NOT LTDL_H_FOUND)
-  MESSAGE(FATAL_ERROR
-    "Failed to find ltdl.h, check that Libtool ltdl is installed.")
-ENDIF()
-#FIXME: check that libltdl.so is available.
-
 # Enable SIGFPE signal to detect arithmetic errors
 OPTION(ENABLE_SIGFPE "Enable floating-point exceptions" OFF)
 IF(ENABLE_SIGFPE)
