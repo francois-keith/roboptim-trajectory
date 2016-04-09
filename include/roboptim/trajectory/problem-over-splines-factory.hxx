@@ -287,7 +287,7 @@ namespace roboptim
     ProblemOverSplinesFactory<T, S>::localConstraint (value_type t,
 						      int order,
 						      value_type value,
-                                                      size_t spline_idx)
+                                                      unsigned long spline_idx)
     {
       size_type inputSize = problem_->function ().inputSize ();
       matrix_t A (1, static_cast<typename matrix_t::Index> (inputSize));

@@ -17,6 +17,7 @@
 
 #include <algorithm>
 #include <functional>
+#include <iterator>
 #include <locale>
 
 #include <roboptim/trajectory/visualization/matplotlib.hh>

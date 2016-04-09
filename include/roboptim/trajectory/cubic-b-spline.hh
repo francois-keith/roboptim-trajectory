@@ -21,6 +21,7 @@
 # include <vector>
 
 # include <roboptim/trajectory/sys.hh>
+# include <roboptim/trajectory/config.hh>
 # include <roboptim/trajectory/deprecated.hh>
 
 # include <roboptim/trajectory/trajectory.hh>
@@ -38,7 +39,7 @@ namespace trajectory
   /// Cubic B-Spline trajectory.
 
   /// Implement a B-Spline as a trajectory as described in doc/cubic-b-spline.tex
-  class CubicBSpline : public Trajectory<3>
+  class ROBOPTIM_TRAJECTORY_DLLAPI CubicBSpline : public Trajectory<3>
   {
   public:
 
@@ -54,12 +55,12 @@ namespace trajectory
     typedef std::vector<basisPolynomials_t> basisPolynomialsVector_t;
 
     /// \brief Legacy typedef.
-    typedef basisPolynomials_t polynomials3vector_t
-      ROBOPTIM_TRAJECTORY_DEPRECATED;
+    ROBOPTIM_TRAJECTORY_DEPRECATED
+      typedef basisPolynomials_t polynomials3vector_t;
 
     /// \brief Legacy typedef.
-    typedef basisPolynomialsVector_t polynomials3vectors_t
-      ROBOPTIM_TRAJECTORY_DEPRECATED;
+    ROBOPTIM_TRAJECTORY_DEPRECATED
+      typedef basisPolynomialsVector_t polynomials3vectors_t;
 
     /// \brief Knot vector type.
     typedef vector_t knots_t;
@@ -146,7 +147,7 @@ namespace trajectory
     /// \brief Regular spacing between B-spline knots. This is only valid for
     /// uniform B-splines.
     /// \return regular spacing between B-spline knots.
-    value_type Dt () const ROBOPTIM_TRAJECTORY_DEPRECATED;
+    ROBOPTIM_TRAJECTORY_DEPRECATED value_type Dt () const;
 
     /// \brief Translate the basis polynomials to a given time t1.
     /// \param t1 new center time, i.e. P = sum(a_i*(t-t1)^i, i={0,3})
@@ -221,8 +222,8 @@ namespace trajectory
     /// \param t instant considered.
     /// \param order order of the basis functions.
     /// \return basis functions evaluated at t.
-    vector_t basisFunctions (value_type t, size_type order) const
-      ROBOPTIM_TRAJECTORY_DEPRECATED;
+    ROBOPTIM_TRAJECTORY_DEPRECATED
+      vector_t basisFunctions (value_type t, size_type order) const;
 
   private:
     /// \brief Number of control points.

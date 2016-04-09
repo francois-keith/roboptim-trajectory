@@ -22,6 +22,7 @@
 # include <boost/optional/optional_fwd.hpp>
 
 # include <roboptim/trajectory/fwd.hh>
+# include <roboptim/trajectory/config.hh>
 # include <roboptim/trajectory/cubic-b-spline.hh>
 # include <roboptim/trajectory/trajectory-cost.hh>
 
@@ -40,7 +41,7 @@ namespace trajectory
   /// \f[\frac{1}{2} \int_{t_{min}}^{t_{max}} ||\ddot{\Gamma_p(t)}||^2 dt\f]
   ///
   /// \f$t_{min}\f$ and \f$t_{max}\f$ are given when the object is instantiated.
-  class SplineLength : public TrajectoryCost<CubicBSpline>
+  class ROBOPTIM_TRAJECTORY_DLLAPI SplineLength : public TrajectoryCost<CubicBSpline>
   {
   public:
     /// Construct the function from a Spline and a definition interval.

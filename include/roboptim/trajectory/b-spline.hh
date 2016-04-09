@@ -143,7 +143,7 @@ namespace trajectory
     jacobian_t variationDerivWrtParam (StableTimePoint tp, size_type order)
       const;
 
-    value_type Dt () const ROBOPTIM_TRAJECTORY_DEPRECATED;
+    ROBOPTIM_TRAJECTORY_DEPRECATED value_type Dt () const;
 
     /// \brief Return the knot vector of the spline.
     /// \return knot vector of the spline (const).
@@ -213,8 +213,8 @@ namespace trajectory
     void impl_derivative (derivative_ref g, StableTimePoint, size_type order)
       const;
 
-    vector_t basisFunctions (value_type t, size_type order) const
-      ROBOPTIM_TRAJECTORY_DEPRECATED;
+    ROBOPTIM_TRAJECTORY_DEPRECATED
+      vector_t basisFunctions (value_type t, size_type order) const;
 
     /// \brief Compute the basis polynomials.
     void computeBasisPolynomials ();

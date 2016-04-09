@@ -18,6 +18,7 @@
 #ifndef ROBOPTIM_TRAJECTORY_ORTHOGONAL_SPEED_HH
 # define ROBOPTIM_TRAJECTORY_ORTHOGONAL_SPEED_HH
 # include <roboptim/trajectory/sys.hh>
+# include <roboptim/trajectory/config.hh>
 
 # include <roboptim/core/derivable-function.hh>
 
@@ -25,7 +26,7 @@ namespace roboptim
 {
 namespace trajectory
 {
-  class OrthogonalSpeed : public DerivableFunction
+  class ROBOPTIM_TRAJECTORY_DLLAPI OrthogonalSpeed : public DerivableFunction
   {
   public:
     OrthogonalSpeed ();

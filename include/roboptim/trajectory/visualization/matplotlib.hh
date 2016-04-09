@@ -20,6 +20,8 @@
 
 # include <string>
 
+# include <roboptim/trajectory/config.hh>
+
 namespace roboptim
 {
   namespace trajectory
@@ -31,7 +33,7 @@ namespace roboptim
         namespace detail
         {
           /// \brief Format a variable name for Python scripts.
-          std::string formattedVarName (const std::string& s);
+          ROBOPTIM_TRAJECTORY_DLLAPI std::string formattedVarName (const std::string& s);
         } // end of namespace detail
       } // end of namespace matplotlib
     } // end of namespace visualization
